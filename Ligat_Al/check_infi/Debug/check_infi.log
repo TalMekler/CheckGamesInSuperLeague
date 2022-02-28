@@ -1,9 +1,6 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (check_infi.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Game.c
+c1 : fatal error C1083: Cannot open source file: 'Game.c': No such file or directory
   Main.c
   Team.c
   Generating Code...
-Team.obj : error LNK2005: __teams_name already defined in Main.obj
-Team.obj : error LNK2005: __cnt_opt already defined in Main.obj
-Team.obj : error LNK2005: __total_opt already defined in Main.obj
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\Debug\Ligat_Al.exe : fatal error LNK1169: one or more multiply defined symbols found

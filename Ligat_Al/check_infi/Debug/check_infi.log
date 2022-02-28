@@ -2,4 +2,5 @@
   Main.c
   Team.c
   Generating Code...
+  LINK : \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\Debug\Ligat_Al.exe not found or not built by the last incremental link; performing full link
   check_infi.vcxproj -> \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\Debug\Ligat_Al.exe

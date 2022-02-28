@@ -1,0 +1,5 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (check_infi.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Main.c
+\\Mac\Home\Desktop\visual_studio_projects\Ligat_Al\check_infi\Main.c(33,25): warning C4047: 'function': 'Team *' differs in levels of indirection from 'Team (*)[5]'
+\\Mac\Home\Desktop\visual_studio_projects\Ligat_Al\check_infi\Main.c(33,19): warning C4024: 'func': different types for formal and actual parameter 3
+  check_infi.vcxproj -> \\Mac\Home\Desktop\visual_studio_projects\Ligat_Al\Debug\Ligat_Al.exe

@@ -18,12 +18,21 @@
     <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GlobalFunc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Team.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Team.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalFunc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

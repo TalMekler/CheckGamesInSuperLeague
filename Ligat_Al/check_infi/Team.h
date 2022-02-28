@@ -1,4 +1,11 @@
 #pragma once
+#include "GlobalFunc.h"
+
+typedef struct {
+	int id;
+	int points;
+} Team;
+
 
 // Declerations
 void func(int* arr, int size, Team* teams);
@@ -8,11 +15,3 @@ int isInPlayoff(Team* sorted, int team_id);
 Team cpyTeam(Team* t);
 Team* sortTeamsByPoints(Team* teams, int size);
 
-// Global vars for team
-enum teams { Nat = 0, Had, Sak, Hap, KS };
-const char* teams_name[] = { "Natania", "Hadera", "Saknin", "Hapoel", "Kiryat Shmona" };
-
-typedef struct {
-	int id;
-	int points;
-} Team;

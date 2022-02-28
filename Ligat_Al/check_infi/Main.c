@@ -1,7 +1,7 @@
 
 // branch recognize
 
-#include "GlobalFunc.h"
+#include "Team.h"
 
 int main() {
 

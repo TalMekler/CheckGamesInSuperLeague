@@ -1,4 +1,4 @@
-#include "GlobalFunc.h"
+#include "Team.h"
 
 void func(int* arr, int size, Team* teams) {
 	if (size == 0) {

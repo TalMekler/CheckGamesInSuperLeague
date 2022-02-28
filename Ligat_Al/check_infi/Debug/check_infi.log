@@ -2,7 +2,7 @@
   Main.c
   Team.c
   Generating Code...
-Team.obj : error LNK2005: _cnt_opt already defined in Main.obj
-Team.obj : error LNK2005: _total_opt already defined in Main.obj
+Team.obj : error LNK2005: _cnt_opt_ already defined in Main.obj
+Team.obj : error LNK2005: _total_opt_ already defined in Main.obj
 Team.obj : error LNK2005: _teams_name already defined in Main.obj
 \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\Debug\Ligat_Al.exe : fatal error LNK1169: one or more multiply defined symbols found

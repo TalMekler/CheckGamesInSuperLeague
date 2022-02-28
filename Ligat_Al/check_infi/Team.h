@@ -1,25 +1,5 @@
 #pragma once
-#ifndef TEAM_DEBUG
-#define TEAM_DEBUG 1
-
-#include <stdio.h>
-#include <stdlib.h>
-
-#define GAMES 7
-#define TEAMS 5
-#define MAX_TEAM_IN_PLAYOFF 3
-
-#ifndef TEAM_DEBUG2
-#define TEAM_DEBUG2 1
-// Global Vars
-int cnt_opt = 0, total_opt = 0;
-enum teams { Nat = 0, Had, Sak, Hap, KS };
-const char* teams_name[] = { "Natania", "Hadera", "Saknin", "Hapoel", "Kiryat Shmona" };
-#endif // !TEAM_DEBUG2
-
-
-
-#endif // !TEAM_DEBUG
+#include "Header.h"
 
 typedef struct {
 	int id;

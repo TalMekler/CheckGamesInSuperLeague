@@ -88,12 +88,12 @@ void calcPoints(int* recursion_arr, Team* teams, int size) {
 void printTeams(Team* teams, int size, int* recursion_arr, int size2) {
 	Team* res;
 	res = sortTeamsByPoints(teams, size);
-	total_opt++;
+	total_opt_++;
 	if (isInPlayoff(res, Hap)) {
-		cnt_opt++;
+		cnt_opt_++;
 		//printArr(recursion_arr, size2);
 		printGames(recursion_arr);
-		printf("========== (%d) ==========\n", cnt_opt);
+		printf("========== (%d) ==========\n", cnt_opt_);
 		for (int i = 0; i < size; i++) {
 			if (i == 3)
 				printf("-------------------- \n");

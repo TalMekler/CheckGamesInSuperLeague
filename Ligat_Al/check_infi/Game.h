@@ -13,8 +13,6 @@ const char* teams_name[] = { "Maccabi Natania", "Hapoel Hadera", "Bnei Saknin", 
 int cnt_opt = 0;
 int total_opt = 0;
 
-
-
 typedef struct {
 	int home_id;
 	int guess_id;

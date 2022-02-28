@@ -1,6 +1,8 @@
 #pragma once
 #include "Header.h"
 
+
+
 typedef struct {
 	int id;
 	int points;

@@ -11,8 +11,8 @@
 #define MAX_TEAM_IN_PLAYOFF 3
 
 // Global Vars
-int cnt_opt_ = 0, total_opt_ = 0;
+extern int cnt_opt_, total_opt_;
 enum teams { Nat = 0, Had, Sak, Hap, KS };
-const char* teams_name[] = { "Natania", "Hadera", "Saknin", "Hapoel", "Kiryat Shmona" };
+extern const char* teams_name[TEAMS];
 
 #endif // !TEAM_DEBUG

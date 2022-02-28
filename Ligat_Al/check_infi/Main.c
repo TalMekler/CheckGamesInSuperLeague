@@ -1,4 +1,3 @@
-
 #include "Team.h"
 
 // rec branch

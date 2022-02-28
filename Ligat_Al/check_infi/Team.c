@@ -1,4 +1,8 @@
 #include "Team.h"
+#include "Header.h"
+
+int cnt_opt_ = 0, total_opt_ = 0;
+const char* teams_name[TEAMS] = { "Natania", "Hadera", "Saknin", "Hapoel", "Kiryat Shmona" };
 
 void printArr(int* arr, int size) {
 	for (int i = 0; i < size; i++) {

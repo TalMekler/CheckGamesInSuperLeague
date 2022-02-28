@@ -84,7 +84,7 @@ void printTeams(Team* teams, int size, int* recursion_arr, int size2) {
 	total_opt++;
 	if (isInPlayoff(res, Hap)) {
 		cnt_opt++;
-		//printArr(recursion_arr, size2);
+		printArr(recursion_arr, size2);
 		printGames(recursion_arr);
 		printf("========== (%d) ==========\n", cnt_opt);
 		for (int i = 0; i < size; i++) {

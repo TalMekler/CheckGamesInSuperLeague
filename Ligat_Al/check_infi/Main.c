@@ -13,7 +13,7 @@ int main() {
 	Team t_arr[] = { t0,t1,t2,t3,t4 };
 	int arr[GAMES] = { 0 };
 	func(arr, GAMES, &t_arr);
-	printf(">>> Games remined: %d <<<\n", GAMES);
-	printf(">>> There are %d/%d combinations <<<\n", cnt_opt, total_opt);
+	/*printf(">>> Games remined: %d <<<\n", GAMES);
+	printf(">>> There are %d/%d combinations <<<\n", cnt_opt, total_opt);*/
 	return 0;
 }

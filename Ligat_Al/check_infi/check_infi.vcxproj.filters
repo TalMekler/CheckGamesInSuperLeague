@@ -18,10 +18,10 @@
     <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GlobalFunc.c">
+    <ClCompile Include="Team.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Team.c">
+    <ClCompile Include="Game.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,9 +30,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GlobalFunc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

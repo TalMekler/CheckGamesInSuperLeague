@@ -1,4 +1,4 @@
-#include "GlobalFunc.h"
+#include "Game.h"
 
 void printArr(int* arr, int size) {
 	for (int i = 0; i < size; i++) {

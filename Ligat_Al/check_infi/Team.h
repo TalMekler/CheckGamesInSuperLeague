@@ -1,5 +1,5 @@
 #pragma once
-#include "GlobalFunc.h"
+#include "Game.h"
 
 typedef struct {
 	int id;

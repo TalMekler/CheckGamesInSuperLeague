@@ -1,14 +1,14 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (check_infi.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  GlobalFunc.c
+  Game.c
   Main.c
 \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(15,25): warning C4047: 'function': 'Team *' differs in levels of indirection from 'Team (*)[5]'
 \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(15,19): warning C4024: 'func': different types for formal and actual parameter 3
   Team.c
   Generating Code...
-Main.obj : error LNK2005: _cnt_opt already defined in GlobalFunc.obj
-Main.obj : error LNK2005: _total_opt already defined in GlobalFunc.obj
-Main.obj : error LNK2005: _teams_name already defined in GlobalFunc.obj
-Team.obj : error LNK2005: _cnt_opt already defined in GlobalFunc.obj
-Team.obj : error LNK2005: _total_opt already defined in GlobalFunc.obj
-Team.obj : error LNK2005: _teams_name already defined in GlobalFunc.obj
+Main.obj : error LNK2005: _teams_name already defined in Game.obj
+Main.obj : error LNK2005: _cnt_opt already defined in Game.obj
+Main.obj : error LNK2005: _total_opt already defined in Game.obj
+Team.obj : error LNK2005: _teams_name already defined in Game.obj
+Team.obj : error LNK2005: _cnt_opt already defined in Game.obj
+Team.obj : error LNK2005: _total_opt already defined in Game.obj
 \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\Debug\Ligat_Al.exe : fatal error LNK1169: one or more multiply defined symbols found

@@ -1,6 +1,6 @@
 #include "Team.h"
 
-// rec branch
+// Branch Main
 int main() {
 
 	Team t0 = { 0, 0 }; // natania 0

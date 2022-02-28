@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "Team.h"
 #include <stdlib.h>
-//Check Git
+
 void printArr(int* arr, int size);
 void func(int* arr, int size, Team* teams);
 void calcPoints(int* recursion_arr, Team* teams, int size);

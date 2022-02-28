@@ -81,16 +81,16 @@ void calcPoints(int* recursion_arr, Team* teams, int size) {
 void printTeams(Team* teams, int size, int* recursion_arr, int size2) {
 	Team* res;
 	res = sortTeamsByPoints(teams, size);
-	total_opt++;
+	_total_opt++;
 	if (isInPlayoff(res, Hap)) {
-		cnt_opt++;
+		_cnt_opt++;
 		printArr(recursion_arr, size2);
 		printGames(recursion_arr);
-		printf("========== (%d) ==========\n", cnt_opt);
+		printf("========== (%d) ==========\n", _cnt_opt);
 		for (int i = 0; i < size; i++) {
 			if (i == 3)
 				printf("-------------------- \n");
-			printf("%d) %s: %d\n", i + 4, teams_name[res[i].id], res[i].points);
+			printf("%d) %s: %d\n", i + 4, _teams_name[res[i].id], res[i].points);
 		}
 		printf("======================\n\n");
 	}
@@ -130,4 +130,70 @@ Team* sortTeamsByPoints(Team* teams, int size) {
 		}
 	}
 	return res;
+}
+
+
+void printArr(int* arr, int size) {
+	for (int i = 0; i < size; i++) {
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
+
+void printGames(int* recursion_arr) {
+	if (recursion_arr[0] == 1)
+		printf("[%s]-%s, ", _teams_name[Nat], _teams_name[KS]);
+	else if (recursion_arr[0] == 0)
+		printf("%s-%s: D, ", _teams_name[Nat], _teams_name[KS]);
+	else
+		printf("%s-[%s], ", _teams_name[Nat], _teams_name[KS]);
+
+	if (recursion_arr[1] == 1)
+		printf("[%s]-%s, ", _teams_name[Hap], _teams_name[Nat]);
+	else
+		if (recursion_arr[1] == 2)
+			printf("%s-[%s], ", _teams_name[Hap], _teams_name[Nat]);
+		else {
+			printf("%s-%s: D, ", _teams_name[Nat], _teams_name[Hap]);
+		}
+
+	if (recursion_arr[2] == 1)
+		printf("[%s]-%s, ", _teams_name[Sak], _teams_name[Had]);
+	else
+		if (recursion_arr[2] == 2)
+			printf("%s-[%s], ", _teams_name[Sak], _teams_name[Had]);
+		else {
+			printf("%s-%s: D, ", _teams_name[Sak], _teams_name[Had]);
+		}
+
+	if (recursion_arr[3] == 1)
+		printf("[%s]-Maccabi, ", _teams_name[Had]);
+	else if (recursion_arr[3] == 0)
+		printf("%s-Maccabi: D, ", _teams_name[Had]);
+	else
+		printf("%s-[Maccabi], ", _teams_name[Had]);
+
+
+	if (recursion_arr[4] == 2)
+		printf("PT-[%s], ", _teams_name[Sak]);
+	else if (recursion_arr[4] == 0)
+		printf("PT-%s: D, ", _teams_name[Sak]);
+	else
+		printf("[PT]-%s, ", _teams_name[Sak]);
+
+	if (recursion_arr[5] == 2)
+		printf("Jerusalem-[%s], ", _teams_name[Hap]);
+	else if (recursion_arr[5] == 0)
+		printf("Jerusalem-%s: D, ", _teams_name[Hap]);
+	else
+		printf("[Jerusalem]-%s, ", _teams_name[Hap]);
+
+	if (recursion_arr[6] == 1)
+		printf("[%s]-Ashdod, ", _teams_name[KS]);
+	else if (recursion_arr[7] == 0)
+		printf("%s-Ashdod: D, ", _teams_name[KS]);
+	else
+		printf("%s-[Ashdod], ", _teams_name[KS]);
+
+	printf("\n");
 }

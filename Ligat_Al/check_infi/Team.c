@@ -17,12 +17,16 @@ void func(int* arr, int size, Team* teams) {
 		return;
 	}
 
-	arr[size - 1] = 0;
+	/*arr[size - 1] = 0;
 	func(arr, size - 1, teams);
 	arr[size - 1] = 1;
 	func(arr, size - 1, teams);
 	arr[size - 1] = 2;
-	func(arr, size - 1, teams);
+	func(arr, size - 1, teams);*/
+	for (int i = 0; i <= 2; i++) {
+		arr[size - 1] = i;
+		func(arr, size - 1, teams);
+	}
 }
 
 void calcPoints(int* recursion_arr, Team* teams, int size) {

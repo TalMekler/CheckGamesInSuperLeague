@@ -15,4 +15,6 @@ extern int cnt_opt_, total_opt_;
 enum teams { Nat = 0, Had, Sak, Hap, KS };
 extern const char* teams_name[TEAMS];
 
+void printPercent(float num);
+
 #endif // !TEAM_DEBUG

@@ -12,7 +12,7 @@ int main() {
 	int arr[GAMES] = { 0 };
 	func(arr, GAMES, t_arr);
 	printf(">>> Games remined: %d <<<\n", GAMES);
-	printf(">>> There are %d/%d combinations <<<\n", cnt_opt_, total_opt_);
+	printf(">>> There are %d/%d combinations ", cnt_opt_, total_opt_); printPercent(((float)cnt_opt_ / total_opt_) * 100); printf(" <<<\n");
 	return 0;
 
 }

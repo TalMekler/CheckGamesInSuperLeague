@@ -99,15 +99,14 @@ void printTeams(Team* teams, int size, int* recursion_arr, int size2) {
 	total_opt_++;
 	if (isInPlayoff(res, Hap)) {
 		cnt_opt_++;
-		//printArr(recursion_arr, size2);
-		printGames(recursion_arr);
+		/*printGames(recursion_arr);
 		printf("========== (%d) ==========\n", cnt_opt_);
 		for (int i = 0; i < size; i++) {
 			if (i == 3)
 				printf("-------------------- \n");
 			printf("%d) %s: %d\n", i + 4, teams_name[res[i].id], res[i].points);
 		}
-		printf("======================\n\n");
+		printf("======================\n\n");*/
 	}
 	free(res);
 	res = NULL;
@@ -204,4 +203,11 @@ int isInPlayoff(Team* sorted, int team_id) {
 		if (sorted[i].id == team_id) return 1;
 	}
 	return 0;
+}
+
+void printPercent(float num) {
+	if (num == (int)num)
+		printf("(%d%%)", (int)num);
+	else
+		printf("(%.2f%%)", num);
 }

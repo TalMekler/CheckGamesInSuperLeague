@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Global_Functions.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="Team.c" />
   </ItemGroup>

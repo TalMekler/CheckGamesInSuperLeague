@@ -205,9 +205,3 @@ int isInPlayoff(Team* sorted, int team_id) {
 	return 0;
 }
 
-void printPercent(float num) {
-	if (num == (int)num)
-		printf("(%d%%)", (int)num);
-	else
-		printf("(%.2f%%)", num);
-}

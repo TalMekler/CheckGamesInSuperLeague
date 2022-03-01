@@ -1,4 +1,6 @@
 #pragma once
+#ifndef TEAM_DEBUG
+#define TEAM_DEBUG
 #include "Header.h"
 
 typedef struct {
@@ -14,3 +16,4 @@ Team* sortTeamsByPoints(Team* teams, int size);
 void printGames(int* recursion_arr);
 Team cpyTeam(Team* t);
 int isInPlayoff(Team* sorted, int team_id);
+#endif

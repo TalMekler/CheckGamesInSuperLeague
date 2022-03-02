@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "Game.h"
 
 #define GAMES 7
 #define TEAMS 5
@@ -14,6 +15,7 @@
 extern int cnt_opt_, total_opt_;
 enum teams { Nat = 0, Had, Sak, Hap, KS };
 extern const char* teams_name[TEAMS];
+extern Game* games_arr;
 
 void printPercent(float num);
 

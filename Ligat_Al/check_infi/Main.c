@@ -1,5 +1,9 @@
 #include "Team.h"
 
+int cnt_opt_ = 0, total_opt_ = 0;
+const char* teams_name[TEAMS] = { "Natania", "Hadera", "Saknin", "Hapoel", "Kiryat Shmona" };
+Game* games_arr;
+
 // Game Branch
 int main() {
 

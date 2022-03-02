@@ -9,6 +9,8 @@
 typedef struct {
 	int id;
 	int points;
+	Game** games; // DMA
+	int num_of_games;
 } Team;
 
 void printArr(int* arr, int size);

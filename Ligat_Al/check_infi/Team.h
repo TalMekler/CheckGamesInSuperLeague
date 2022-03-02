@@ -1,5 +1,5 @@
 #pragma once
-//Main branch.
+//Game branch.
 
 #ifndef TEAM_DEBUG
 #define TEAM_DEBUG

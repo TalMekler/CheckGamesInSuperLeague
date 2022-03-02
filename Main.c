@@ -1,6 +1,6 @@
 #include "Team.h"
 
-// Branch Main
+// Branch Main - Check
 int main() {
 
 	Team t0 = { 0, 0 }; // natania 0

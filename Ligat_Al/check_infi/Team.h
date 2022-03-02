@@ -3,7 +3,8 @@
 
 #ifndef TEAM_DEBUG
 #define TEAM_DEBUG
-#include "Header.h"
+#include "Game.h"
+//#include "Header.h"
 
 typedef struct {
 	int id;

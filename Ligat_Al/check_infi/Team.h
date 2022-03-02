@@ -1,5 +1,5 @@
 #pragma once
-//Main branch
+//Main branch.
 
 #ifndef TEAM_DEBUG
 #define TEAM_DEBUG

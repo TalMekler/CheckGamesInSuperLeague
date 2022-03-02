@@ -18,4 +18,5 @@ Team* sortTeamsByPoints(Team* teams, int size);
 void printGames(int* recursion_arr);
 Team cpyTeam(Team* t);
 int isInPlayoff(Team* sorted, int team_id);
+void printData(Team* res, int* recursion_arr);
 #endif

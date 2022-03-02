@@ -18,13 +18,7 @@ void func(int* arr, int size, Team* teams) {
 		return;
 	}
 
-	/*arr[size - 1] = 0;
-	func(arr, size - 1, teams);
-	arr[size - 1] = 1;
-	func(arr, size - 1, teams);
-	arr[size - 1] = 2;
-	func(arr, size - 1, teams);*/
-	for (int i = 0; i <= 2; i++) {
+	for (int i = 0; i <= 2; i++) { // recursion options
 		arr[size - 1] = i;
 		func(arr, size - 1, teams);
 	}
@@ -100,14 +94,7 @@ void printTeams(Team* teams, int size, int* recursion_arr, int size2) {
 	total_opt_++;
 	if (isInPlayoff(res, Hap)) {
 		cnt_opt_++;
-		/*printGames(recursion_arr);
-		printf("========== (%d) ==========\n", cnt_opt_);
-		for (int i = 0; i < size; i++) {
-			if (i == 3)
-				printf("-------------------- \n");
-			printf("%d) %s: %d\n", i + 4, teams_name[res[i].id], res[i].points);
-		}
-		printf("======================\n\n");*/
+		printData(res, recursion_arr);
 	}
 	free(res);
 	res = NULL;
@@ -206,3 +193,13 @@ int isInPlayoff(Team* sorted, int team_id) {
 	return 0;
 }
 
+void printData(Team* res, int* recursion_arr) {
+	printGames(recursion_arr);
+	printf("========== (%d) ==========\n", cnt_opt_);
+	for (int i = 0; i < TEAMS; i++) {
+		if (i == 3)
+			printf("-------------------- \n");
+		printf("%d) %s: %d\n", i + 4, teams_name[res[i].id], res[i].points);
+	}
+	printf("======================\n\n");
+}

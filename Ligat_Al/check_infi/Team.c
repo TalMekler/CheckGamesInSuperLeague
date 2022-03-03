@@ -2,8 +2,6 @@
 #include "Header.h"
 //Game Branch
 
-
-
 void printArr(int* arr, int size) {
 	for (int i = 0; i < size; i++) {
 		printf("%d ", arr[i]);
@@ -206,4 +204,22 @@ void printData(Team* res, int* recursion_arr) {
 int isTeamExist(int team_id) {
 	if (team_id >= 0 && team_id < TEAMS) return 1;
 	return 0;
+}
+
+void resetTeamPoints(Team** team_arr) {
+	for (int i = 0; i < TEAMS; i++) {
+		team_arr[i]->points = team_points[i];
+	}
+}
+
+Team* createTeam(int id) {
+	Team* t = (Team*)calloc(1, sizeof(Team));
+	t->id = id;
+	return t;
+}
+
+void makeTeamArr(Team** team_arr) {
+	for (int i = 0; i < TEAMS; i++) {
+		team_arr[i] = createTeam(i);
+	}
 }

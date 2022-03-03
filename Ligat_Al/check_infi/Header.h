@@ -15,7 +15,8 @@
 extern int cnt_opt_, total_opt_;
 enum teams { Nat = 0, Had, Sak, Hap, KS };
 extern const char* teams_name[TEAMS];
-extern Game* games_arr;
+//extern Game* games_arr[GAMES];
+extern int team_points[TEAMS];
 
 void printPercent(float num);
 

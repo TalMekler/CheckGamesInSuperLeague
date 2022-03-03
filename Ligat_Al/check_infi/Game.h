@@ -11,4 +11,5 @@ typedef struct {
 } Game;
 
 int isGameBelongTeam(Game* game, int team_id);
+void printGame(Game* game);
 #endif // !GAME_DEBUG

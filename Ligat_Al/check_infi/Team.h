@@ -22,4 +22,5 @@ void printGames(int* recursion_arr);
 Team cpyTeam(Team* t);
 int isInPlayoff(Team* sorted, int team_id);
 void printData(Team* res, int* recursion_arr);
+int isTeamExist(int team_id);
 #endif

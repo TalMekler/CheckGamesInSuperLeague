@@ -202,3 +202,8 @@ void printData(Team* res, int* recursion_arr) {
 	}
 	printf("======================\n\n");
 }
+
+int isTeamExist(int team_id) {
+	if (team_id >= 0 && team_id < TEAMS) return 1;
+	return 0;
+}

@@ -9,7 +9,7 @@
 
 //#define GAMES 7
 #define TEAMS 5
-#define EXTRA_TEAMS 9
+#define EXTRA_TEAMS 9 // **** If there is no EXTRA TEAM -> value = TEAMS value ****
 #define MAX_TEAM_IN_PLAYOFF 3
 
 // Global Vars

@@ -35,11 +35,10 @@ void printTeams(Team** teams_arr, Game** games_arr) {
 	Team** res;
 	res = sortTeamsByPoints(teams_arr);
 	total_opt_++;
-	printData(res, games_arr);
-	/*if (isInPlayoff(res, Hap)) {
+	if (isInPlayoff(res, Hap)) {
 		cnt_opt_++;
 		printData(res, games_arr);
-	}*/
+	}
 	free(res);
 	res = NULL;
 
@@ -81,9 +80,9 @@ void printGames(Game** games_arr) {
 	printf("\n");
 }
 
-int isInPlayoff(Team* sorted, int team_id) {
+int isInPlayoff(Team** sorted, int team_id) {
 	for (int i = 0; i < MAX_TEAM_IN_PLAYOFF; i++) {
-		if (sorted[i].id == team_id) return 1;
+		if (sorted[i]->id == team_id) return 1;
 	}
 	return 0;
 }
@@ -123,9 +122,6 @@ void makeTeamArr(Team** team_arr) {
 }
 
 void freeTeam(Team* team) {
-	for (int i = 0; i < team->num_of_games; i++) {
-		free(team->games[i]);
-	}
 	free(team->games);
 	free(team);
 	team = NULL;
@@ -134,8 +130,6 @@ void freeTeamArr(Team** team_arr) {
 	for (int i = 0; i < TEAMS; i++) {
 		freeTeam(team_arr[i]);
 	}
-	free(team_arr);
-	team_arr = NULL;
 }
 
 void addGameToTeam(Team** team_arr, Game** games) {

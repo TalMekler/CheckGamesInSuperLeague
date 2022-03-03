@@ -13,9 +13,9 @@ typedef struct {
 	int num_of_games;
 } Team;
 
-void printArr(int* arr, int size);
-int isInPlayoff(Team* sorted, int team_id);
-int isTeamExist(int team_id);
+//void printArr(int* arr, int size);
+//
+//int isTeamExist(int team_id);
 
 // uptaded
 void func(Game** games_arr, int size, Team** teams_arr);
@@ -31,4 +31,5 @@ Team** sortTeamsByPoints(Team** teams_arr);
 void printGames(Game** games_arr);
 void printData(Team** res, Game** games_arr);
 void printTeams(Team** teams_arr, Game** games_arr);
+int isInPlayoff(Team** sorted, int team_id);
 #endif

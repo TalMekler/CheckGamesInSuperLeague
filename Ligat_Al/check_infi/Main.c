@@ -21,9 +21,13 @@ int main() {
 	resetTeamPoints(&teams_arr);
 	addGameToTeam(&teams_arr, &games_arr);
 	func(&games_arr, GAMES, &teams_arr);
+	freeTeamArr(&teams_arr);
+	printf(">>> Games remined: %d <<<\n", GAMES);
+	printf(">>> There are %d/%d combinations ", cnt_opt_, total_opt_); printPercent(((float)cnt_opt_ / total_opt_) * 100); printf(" <<<\n");
+
 	printf("done!\n");
-	
-	
+
+
 	//Team t0 = { 0, 0 }; // natania 0
 	//Team t1 = { 1, 0 }; // hadera 1
 	//Team t2 = { 2, 0 }; // saknin 2

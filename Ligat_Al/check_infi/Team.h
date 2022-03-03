@@ -14,8 +14,7 @@ typedef struct {
 } Team;
 
 void printArr(int* arr, int size);
-void func(int* arr, int size, Team* teams);
-void calcPoints(int* recursion_arr, Team* teams, int size);
+void calcPoints(Team** teams_arr);
 void printTeams(Team* teams, int size, int* recursion_arr, int size2);
 Team* sortTeamsByPoints(Team* teams, int size);
 void printGames(int* recursion_arr);
@@ -24,6 +23,7 @@ int isInPlayoff(Team* sorted, int team_id);
 void printData(Team* res, int* recursion_arr);
 int isTeamExist(int team_id);
 
+void func(Game** games_arr, int size, Team** teams_arr);
 void resetTeamPoints(Team** team_arr);
 Team* createTeam(int id);
 void makeTeamArr(Team** team_arr);

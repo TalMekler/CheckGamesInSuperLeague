@@ -10,6 +10,10 @@
 \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(22,16): warning C4024: 'addGameToTeam': different types for formal and actual parameter 1
 \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(22,38): warning C4047: 'function': 'Game **' differs in levels of indirection from 'Game *(*)[7]'
 \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(22,28): warning C4024: 'addGameToTeam': different types for formal and actual parameter 2
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(23,17): warning C4047: 'function': 'Game **' differs in levels of indirection from 'Game *(*)[7]'
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(23,7): warning C4024: 'func': different types for formal and actual parameter 1
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(23,36): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[5]'
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(23,26): warning C4024: 'func': different types for formal and actual parameter 3
   Team.c
   Generating Code...
   check_infi.vcxproj -> \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\Debug\Ligat_Al.exe

@@ -9,8 +9,8 @@ int team_points[] = { 36,36,36,34,30 }; // Natania, Hadera, Saknin, Hapoel TA, K
 int main() {
 
 	Game g1 = { Nat, KS, 0 };
-	Game g2 = { Hap, Nat, 1 };
-	Game g3 = { Sak, Had, 2 };
+	Game g2 = { Hap, Nat, 0 };
+	Game g3 = { Sak, Had, 0 };
 	Game g4 = { Had, -1, 0 };
 	Game g5 = { -1, Sak, 0 };
 	Game g6 = { -1, Hap, 0 };
@@ -20,7 +20,7 @@ int main() {
 	makeTeamArr(&teams_arr);
 	resetTeamPoints(&teams_arr);
 	addGameToTeam(&teams_arr, &games_arr);
-
+	func(&games_arr, GAMES, &teams_arr);
 	printf("done!\n");
 	
 	

@@ -12,4 +12,5 @@ typedef struct {
 
 int isGameBelongTeam(Game* game, int team_id);
 void printGame(Game* game);
+int getPointsToAdd(Game* game, int team_id);
 #endif // !GAME_DEBUG

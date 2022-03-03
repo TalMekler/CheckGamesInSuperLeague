@@ -9,79 +9,24 @@ void printArr(int* arr, int size) {
 	printf("\n");
 }
 
-void func(int* arr, int size, Team* teams) {
+void func(Game** games_arr, int size, Team** teams_arr) {
 	if (size == 0) {
-		calcPoints(arr, teams, GAMES);
+		calcPoints(teams_arr);
 		return;
 	}
 
 	for (int i = 0; i <= 2; i++) { // recursion options
-		arr[size - 1] = i;
-		func(arr, size - 1, teams);
+		games_arr[size - 1]->game_res = i;
+		func(games_arr, size - 1, teams_arr);
 	}
 }
 
-void calcPoints(int* recursion_arr, Team* teams, int size) {
-	int team_points[] = { 36,36,36,34,30 }; // Natania, Hadera, Saknin, Hapoel TA, Kiryat Shmona
-
-	if (recursion_arr[0] == 1)
-		team_points[Nat] = team_points[Nat] + 3; // natania win
-	else if (recursion_arr[0] == 2)
-		team_points[KS] = team_points[KS] + 3;
-	else {
-		team_points[KS] = team_points[KS] + 1;
-		team_points[Nat] = team_points[Nat] + 1;
-	}
-
-	if (recursion_arr[1] == 1)
-		team_points[Hap] = team_points[Hap] + 3; // hapoel win
-	else
-		if (recursion_arr[1] == 2)
-			team_points[Nat] = team_points[Nat] + 3; // natania win
-		else if (recursion_arr[1] == 0) {
-			team_points[Nat] = team_points[Nat] + 1;
-			team_points[Hap] = team_points[Hap] + 1;
-		}
-
-	if (recursion_arr[2] == 1)
-		team_points[Sak] = team_points[Sak] + 3; // saknin win
-	else
-		if (recursion_arr[2] == 2)
-			team_points[Had] = team_points[Had] + 3; // hadera
-		else if (recursion_arr[2] == 0) {
-			team_points[Sak] = team_points[Sak] + 1;
-			team_points[Had] = team_points[Had] + 1;
-		}
-
-	if (recursion_arr[3] == 1)
-		team_points[Had] += 3; // hadera
-	else if (recursion_arr[3] == 0)
-		team_points[Had] = team_points[Had] + 1;
-
-
-	if (recursion_arr[4] == 2)
-		team_points[Sak] = team_points[Sak] + 3;
-	else if (recursion_arr[4] == 0)
-		team_points[Sak] = team_points[Sak] + 1;
-
-	if (recursion_arr[5] == 2)
-		team_points[Hap] = team_points[Hap] + 3;
-	else if (recursion_arr[5] == 0)
-		team_points[Hap] = team_points[Hap] + 1;
-
-	if (recursion_arr[6] == 1)
-		team_points[KS] = team_points[KS] + 3;
-	else if (recursion_arr[7] == 0)
-		team_points[KS] = team_points[KS] + 1;
-
-
-
+void calcPoints(Team** teams_arr) {
+	resetTeamPoints(teams_arr);
 	for (int i = 0; i < TEAMS; i++) {
-		teams[i].points = team_points[i];
-	}
-	printTeams(teams, TEAMS, recursion_arr, GAMES);
-	for (int i = 0; i < TEAMS; i++) {
-		teams[i].points = 0;
+		for (int j = 0; j < teams_arr[i]->num_of_games; j++) {
+			teams_arr[i]->points += getPointsToAdd(teams_arr[i]->games[j], teams_arr[i]->id);
+		}
 	}
 }
 

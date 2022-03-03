@@ -17,6 +17,16 @@ void printGame(Game* game) {
 		}
 }
 
+void printGames(Game** games_arr) {
+	for (int i = 0; i < GAMES; i++) {
+		printGame(games_arr[i]);
+		if (i + 1 < GAMES) {
+			printf(", ");
+		}
+	}
+	printf("\n");
+}
+
 int getPointsToAdd(Game* game, int team_id) {
 	if (game->game_res == 0) return Draw;
 	if (game->game_res == 1 && game->home_id == team_id) return Win;

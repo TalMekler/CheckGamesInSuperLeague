@@ -28,7 +28,6 @@ void freeTeamArr(Team** team_arr);
 void addGameToTeam(Team** team_arr, Game** games);
 Team* cpyTeam(Team* t);
 Team** sortTeamsByPoints(Team** teams_arr);
-void printGames(Game** games_arr);
 void printData(Team** res, Game** games_arr);
 void printTeams(Team** teams_arr, Game** games_arr);
 int isInPlayoff(Team** sorted, int team_id);

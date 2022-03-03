@@ -70,15 +70,7 @@ Team** sortTeamsByPoints(Team** teams_arr) {
 	return res;
 }
 
-void printGames(Game** games_arr) {
-	for (int i = 0; i < GAMES; i++) {
-		printGame(games_arr[i]);
-		if (i + 1 < GAMES) {
-			printf(", ");
-		}
-	}
-	printf("\n");
-}
+
 
 int isInPlayoff(Team** sorted, int team_id) {
 	for (int i = 0; i < MAX_TEAM_IN_PLAYOFF; i++) {
@@ -126,6 +118,7 @@ void freeTeam(Team* team) {
 	free(team);
 	team = NULL;
 }
+
 void freeTeamArr(Team** team_arr) {
 	for (int i = 0; i < TEAMS; i++) {
 		freeTeam(team_arr[i]);

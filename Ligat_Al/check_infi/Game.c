@@ -7,13 +7,13 @@ int isGameBelongTeam(Game* game, int team_id) {
 
 void printGame(Game* game) {
 	if (game->game_res == 0) {
-		printf("%s-%s: D\n", teams_name[game->home_id], teams_name[game->guess_id]);
+		printf("%s-%s: D", teams_name[game->home_id], teams_name[game->guess_id]);
 	}else 
 		if (game->game_res == 1) {
-			printf("[%s]-%s\n", teams_name[game->home_id], teams_name[game->guess_id]);
+			printf("[%s]-%s", teams_name[game->home_id], teams_name[game->guess_id]);
 		}
 		else {
-			printf("%s-[%s]\n", teams_name[game->home_id], teams_name[game->guess_id]);
+			printf("%s-[%s]", teams_name[game->home_id], teams_name[game->guess_id]);
 		}
 }
 

@@ -11,7 +11,7 @@ void printArr(int* arr, int size) {
 
 void func(Game** games_arr, int size, Team** teams_arr) {
 	if (size == 0) {
-		calcPoints(teams_arr);
+		calcPoints(teams_arr, games_arr);
 		return;
 	}
 
@@ -21,46 +21,47 @@ void func(Game** games_arr, int size, Team** teams_arr) {
 	}
 }
 
-void calcPoints(Team** teams_arr) {
+void calcPoints(Team** teams_arr, Game** games_arr) {
 	resetTeamPoints(teams_arr);
 	for (int i = 0; i < TEAMS; i++) {
 		for (int j = 0; j < teams_arr[i]->num_of_games; j++) {
 			teams_arr[i]->points += getPointsToAdd(teams_arr[i]->games[j], teams_arr[i]->id);
 		}
 	}
+	printTeams(teams_arr, games_arr);
 }
 
-void printTeams(Team* teams, int size, int* recursion_arr, int size2) {
-	Team* res;
-	res = sortTeamsByPoints(teams, size);
+void printTeams(Team** teams_arr, Game** games_arr) {
+	Team** res;
+	res = sortTeamsByPoints(teams_arr);
 	total_opt_++;
-	if (isInPlayoff(res, Hap)) {
+	printData(res, games_arr);
+	/*if (isInPlayoff(res, Hap)) {
 		cnt_opt_++;
-		printData(res, recursion_arr);
-	}
+		printData(res, games_arr);
+	}*/
 	free(res);
 	res = NULL;
 
 }
 
-Team cpyTeam(Team* t) {
-	Team cpy;
-	cpy.id = t->id;
-	cpy.points = t->points;
+Team* cpyTeam(Team* t) {
+	Team* cpy = (Team*)calloc(1, sizeof(Team));
+	cpy->id = t->id;
+	cpy->points = t->points;
 	return cpy;
 }
 
-Team* sortTeamsByPoints(Team* teams, int size) {
-	Team* res = (Team*)calloc(TEAMS, sizeof(Team));
-	Team tmp;
+Team** sortTeamsByPoints(Team** teams_arr) {
+	Team** res = (Team**)calloc(TEAMS, sizeof(Team*));
+	Team* tmp;
 
 	for (int i = 0; i < TEAMS; i++) {
-		res[i] = cpyTeam(&teams[i]);
+		res[i] = cpyTeam(teams_arr[i]);
 	}
-
-	for (int i = 0; i < size; i++) {
-		for (int j = 0; j < size - 1 - i; j++) {
-			if (res[j].points < res[j + 1].points) {
+	for (int i = 0; i < TEAMS; i++) {
+		for (int j = 0; j < TEAMS - 1 - i; j++) {
+			if (res[j]->points < res[j + 1]->points) {
 				tmp = res[j];
 				res[j] = res[j + 1];
 				res[j + 1] = tmp;
@@ -70,61 +71,13 @@ Team* sortTeamsByPoints(Team* teams, int size) {
 	return res;
 }
 
-void printGames(int* recursion_arr) {
-	if (recursion_arr[0] == 1)
-		printf("[%s]-%s, ", teams_name[Nat], teams_name[KS]);
-	else if (recursion_arr[0] == 0)
-		printf("%s-%s: D, ", teams_name[Nat], teams_name[KS]);
-	else
-		printf("%s-[%s], ", teams_name[Nat], teams_name[KS]);
-
-	if (recursion_arr[1] == 1)
-		printf("[%s]-%s, ", teams_name[Hap], teams_name[Nat]);
-	else
-		if (recursion_arr[1] == 2)
-			printf("%s-[%s], ", teams_name[Hap], teams_name[Nat]);
-		else {
-			printf("%s-%s: D, ", teams_name[Nat], teams_name[Hap]);
+void printGames(Game** games_arr) {
+	for (int i = 0; i < GAMES; i++) {
+		printGame(games_arr[i]);
+		if (i + 1 < GAMES) {
+			printf(", ");
 		}
-
-	if (recursion_arr[2] == 1)
-		printf("[%s]-%s, ", teams_name[Sak], teams_name[Had]);
-	else
-		if (recursion_arr[2] == 2)
-			printf("%s-[%s], ", teams_name[Sak], teams_name[Had]);
-		else {
-			printf("%s-%s: D, ", teams_name[Sak], teams_name[Had]);
-		}
-
-	if (recursion_arr[3] == 1)
-		printf("[%s]-Maccabi, ", teams_name[Had]);
-	else if (recursion_arr[3] == 0)
-		printf("%s-Maccabi: D, ", teams_name[Had]);
-	else
-		printf("%s-[Maccabi], ", teams_name[Had]);
-
-
-	if (recursion_arr[4] == 2)
-		printf("PT-[%s], ", teams_name[Sak]);
-	else if (recursion_arr[4] == 0)
-		printf("PT-%s: D, ", teams_name[Sak]);
-	else
-		printf("[PT]-%s, ", teams_name[Sak]);
-
-	if (recursion_arr[5] == 2)
-		printf("Jerusalem-[%s], ", teams_name[Hap]);
-	else if (recursion_arr[5] == 0)
-		printf("Jerusalem-%s: D, ", teams_name[Hap]);
-	else
-		printf("[Jerusalem]-%s, ", teams_name[Hap]);
-
-	if (recursion_arr[6] == 1)
-		printf("[%s]-Ashdod, ", teams_name[KS]);
-	else if (recursion_arr[7] == 0)
-		printf("%s-Ashdod: D, ", teams_name[KS]);
-	else
-		printf("%s-[Ashdod], ", teams_name[KS]);
-
+	}
 	printf("\n");
 }
 
@@ -135,13 +88,13 @@ int isInPlayoff(Team* sorted, int team_id) {
 	return 0;
 }
 
-void printData(Team* res, int* recursion_arr) {
-	printGames(recursion_arr);
+void printData(Team** res, Game** games_arr) {
+	printGames(games_arr);
 	printf("========== (%d) ==========\n", cnt_opt_);
 	for (int i = 0; i < TEAMS; i++) {
 		if (i == 3)
 			printf("-------------------- \n");
-		printf("%d) %s: %d\n", i + 4, teams_name[res[i].id], res[i].points);
+		printf("%d) %s: %d\n", i + 4, teams_name[res[i]->id], res[i]->points);
 	}
 	printf("======================\n\n");
 }

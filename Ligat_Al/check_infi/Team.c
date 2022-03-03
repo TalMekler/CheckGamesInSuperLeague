@@ -35,10 +35,12 @@ void printTeams(Team** teams_arr, Game** games_arr) {
 	Team** res;
 	res = sortTeamsByPoints(teams_arr);
 	total_opt_++;
+
 	if (isInPlayoff(res, Hap)) {
 		cnt_opt_++;
 		printData(res, games_arr);
 	}
+
 	free(res);
 	res = NULL;
 
@@ -69,8 +71,6 @@ Team** sortTeamsByPoints(Team** teams_arr) {
 	}
 	return res;
 }
-
-
 
 int isInPlayoff(Team** sorted, int team_id) {
 	for (int i = 0; i < MAX_TEAM_IN_PLAYOFF; i++) {

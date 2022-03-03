@@ -4,7 +4,7 @@ int cnt_opt_ = 0, total_opt_ = 0;
 const char* teams_name[TEAMS] = { "Natania", "Hadera", "Saknin", "Hapoel", "Kiryat Shmona" };
 //Game* games_arr[GAMES] = { 0 };
 int team_points[] = { 36,36,36,34,30 }; // Natania, Hadera, Saknin, Hapoel TA, Kiryat Shmona
-
+int GAMES = 0;
 // Game Branch
 int main() {
 
@@ -16,6 +16,7 @@ int main() {
 	Game g6 = { -1, Hap, 0 };
 	Game g7 = { KS, -1, 0 };
 	Game* games_arr[] = { &g1,&g2,&g3,&g4,&g5,&g6,&g7 };
+	GAMES = sizeof(games_arr) / sizeof(Game*);
 	Team* teams_arr[TEAMS];
 	makeTeamArr(&teams_arr);
 	resetTeamPoints(&teams_arr);

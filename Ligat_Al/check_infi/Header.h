@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include "Game.h"
 
-#define GAMES 7
+//#define GAMES 7
 #define TEAMS 5
 #define MAX_TEAM_IN_PLAYOFF 3
 
@@ -18,6 +18,7 @@ enum games_res_opt {Lose, Draw, Win = 3};
 extern const char* teams_name[TEAMS];
 //extern Game* games_arr[GAMES];
 extern int team_points[TEAMS];
+extern int GAMES;
 
 void printPercent(float num);
 

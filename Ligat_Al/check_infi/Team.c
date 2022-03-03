@@ -239,3 +239,15 @@ void freeTeamArr(Team** team_arr) {
 	free(team_arr);
 	team_arr = NULL;
 }
+
+void addGameToTeam(Team** team_arr, Game** games) {
+	for (int i = 0; i < TEAMS; i++) {
+		for (int j = 0; j < GAMES; j++) {
+			if (isGameBelongTeam(games[j], team_arr[i]->id)) {
+				team_arr[i]->games = (Game**)realloc(team_arr[i]->games, sizeof(Game*) * (1 + team_arr[i]->num_of_games));
+				team_arr[i]->games[team_arr[i]->num_of_games] = games[j];
+				++team_arr[i]->num_of_games;
+			}
+		}
+	}
+}

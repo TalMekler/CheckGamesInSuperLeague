@@ -24,6 +24,9 @@
     <ClCompile Include="Global_Functions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Game.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Team.h">

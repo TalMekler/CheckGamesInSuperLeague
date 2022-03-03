@@ -18,7 +18,9 @@ int main() {
 	Game* games_arr[] = { &g1,&g2,&g3,&g4,&g5,&g6,&g7 };
 	Team* teams_arr[TEAMS];
 	makeTeamArr(&teams_arr);
-	printf("\n");
+	resetTeamPoints(&teams_arr);
+	addGameToTeam(&teams_arr, &games_arr);
+	printf("done!\n");
 	
 	
 	//Team t0 = { 0, 0 }; // natania 0

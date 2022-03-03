@@ -223,3 +223,19 @@ void makeTeamArr(Team** team_arr) {
 		team_arr[i] = createTeam(i);
 	}
 }
+
+void freeTeam(Team* team) {
+	for (int i = 0; i < team->num_of_games; i++) {
+		free(team->games[i]);
+	}
+	free(team->games);
+	free(team);
+	team = NULL;
+}
+void freeTeamArr(Team** team_arr) {
+	for (int i = 0; i < TEAMS; i++) {
+		freeTeam(team_arr[i]);
+	}
+	free(team_arr);
+	team_arr = NULL;
+}

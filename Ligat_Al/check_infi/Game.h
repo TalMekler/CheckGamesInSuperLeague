@@ -10,4 +10,5 @@ typedef struct {
 	int game_res; // 0 / 1 / 2
 } Game;
 
+int isGameBelongTeam(Game* game, int team_id);
 #endif // !GAME_DEBUG

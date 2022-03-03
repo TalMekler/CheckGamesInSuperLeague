@@ -18,8 +18,8 @@ void printGame(Game* game) {
 }
 
 int getPointsToAdd(Game* game, int team_id) {
-	if (game->game_res == 0) return 1;
-	if (game->game_res == 1 && game->home_id == team_id) return 3;
-	if (game->game_res == 2 && game->guess_id == team_id) return 3;
-	return 0;
+	if (game->game_res == 0) return Draw;
+	if (game->game_res == 1 && game->home_id == team_id) return Win;
+	if (game->game_res == 2 && game->guess_id == team_id) return Win;
+	return Lose;
 }

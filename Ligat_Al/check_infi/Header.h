@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include "Game.h"
 
-#define TEAMS 5 // **** Number of the teams you want to check ****
+#define TEAMS 4 // **** Number of the teams you want to check ****
 #define EXTRA_TEAMS 9 // **** If there is no EXTRA TEAM -> value = TEAMS value ****
 #define MAX_TEAM_IN_PLAYOFF 3
 

@@ -36,7 +36,7 @@ void printTeams(Team** teams_arr, Game** games_arr) {
 	res = sortTeamsByPoints(teams_arr);
 	total_opt_++;
 
-	if (isInPlayoff(res, Sak)) {
+	if (isInPlayoff(res, Hap)) {
 		cnt_opt_++;
 		printData(res, games_arr);
 	}
@@ -83,7 +83,7 @@ void printData(Team** res, Game** games_arr) {
 	printGames(games_arr);
 	printf("========== (%d) ==========\n", cnt_opt_);
 	for (int i = 0; i < TEAMS; i++) {
-		if (i == 3)
+		if (i == MAX_TEAM_IN_PLAYOFF)
 			printf("-------------------- \n");
 		printf("%d) %s: %d\n", i + 4, teams_name[res[i]->id], res[i]->points);
 	}

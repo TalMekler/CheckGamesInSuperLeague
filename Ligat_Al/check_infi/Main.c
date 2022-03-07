@@ -14,8 +14,8 @@ int main() {
 	Game g4 = { Had, MTA, 0 };
 	Game g5 = { PTH, Sak, 0 };
 	/*Game g6 = { HJER, Hap, 0 };*/
-	Game g7 = { KS, ASH, 0 };
-	Game* games_arr[] = { /*&g1,*/&g2,/*&g3,*/&g4,&g5,/*&g6,*/&g7 };
+	/*Game g7 = { KS, ASH, 0 };*/
+	Game* games_arr[] = { /*&g1,*/&g2,/*&g3,*/&g4,&g5,/*&g6,&g7*/ };
 	GAMES = sizeof(games_arr) / sizeof(Game*);
 	Team* teams_arr[TEAMS];
 	makeTeamArr(&teams_arr);

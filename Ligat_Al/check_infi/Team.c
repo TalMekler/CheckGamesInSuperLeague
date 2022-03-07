@@ -34,13 +34,17 @@ void calcPoints(Team** teams_arr, Game** games_arr) {
 void printTeams(Team** teams_arr, Game** games_arr) {
 	Team** res;
 	res = sortTeamsByPoints(teams_arr);
+	
 	total_opt_++;
-
-	if (isInPlayoff(res, Hap)) {
+	
+	if (isInPlayoff(res, HTA)) {
 		cnt_opt_++;
-		printData(res, games_arr);
+		//printData(res, games_arr);
 	}
-
+	for (int i = 0; i < TEAMS; i++) {
+		free(res[i]->games);
+		free(res[i]);
+	}
 	free(res);
 	res = NULL;
 

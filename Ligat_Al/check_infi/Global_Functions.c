@@ -1,5 +1,5 @@
 #include "Header.h"
-//Game Branch
+//Main Branch
 
 
 void printPercent(float num) {

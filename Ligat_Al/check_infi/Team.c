@@ -1,6 +1,9 @@
 #include "Team.h"
 #include "Header.h"
-//Game Branch
+//Main Branch
+
+int cnt_opt_ = 0, total_opt_ = 0;
+const char* teams_name[TEAMS] = { "Natania", "Hadera", "Saknin", "Hapoel", "Kiryat Shmona" };
 
 void printArr(int* arr, int size) {
 	for (int i = 0; i < size; i++) {
@@ -9,60 +12,113 @@ void printArr(int* arr, int size) {
 	printf("\n");
 }
 
-void func(Game** games_arr, int size, Team** teams_arr) {
+void func(int* arr, int size, Team* teams) {
 	if (size == 0) {
-		calcPoints(teams_arr, games_arr);
+		calcPoints(arr, teams, GAMES);
 		return;
 	}
 
 	for (int i = 0; i <= 2; i++) { // recursion options
-		games_arr[size - 1]->game_res = i;
-		func(games_arr, size - 1, teams_arr);
+		arr[size - 1] = i;
+		func(arr, size - 1, teams);
 	}
 }
 
-void calcPoints(Team** teams_arr, Game** games_arr) {
-	resetTeamPoints(teams_arr);
-	for (int i = 0; i < TEAMS; i++) {
-		for (int j = 0; j < teams_arr[i]->num_of_games; j++) {
-			teams_arr[i]->points += getPointsToAdd(teams_arr[i]->games[j], teams_arr[i]->id);
+void calcPoints(int* recursion_arr, Team* teams, int size) {
+	int team_points[] = { 36,36,36,34,30 }; // Natania, Hadera, Saknin, Hapoel TA, Kiryat Shmona
+
+	if (recursion_arr[0] == 1)
+		team_points[Nat] = team_points[Nat] + 3; // natania win
+	else if (recursion_arr[0] == 2)
+		team_points[KS] = team_points[KS] + 3;
+	else {
+		team_points[KS] = team_points[KS] + 1;
+		team_points[Nat] = team_points[Nat] + 1;
+	}
+
+	if (recursion_arr[1] == 1)
+		team_points[Hap] = team_points[Hap] + 3; // hapoel win
+	else
+		if (recursion_arr[1] == 2)
+			team_points[Nat] = team_points[Nat] + 3; // natania win
+		else if (recursion_arr[1] == 0) {
+			team_points[Nat] = team_points[Nat] + 1;
+			team_points[Hap] = team_points[Hap] + 1;
 		}
+
+	if (recursion_arr[2] == 1)
+		team_points[Sak] = team_points[Sak] + 3; // saknin win
+	else
+		if (recursion_arr[2] == 2)
+			team_points[Had] = team_points[Had] + 3; // hadera
+		else if (recursion_arr[2] == 0) {
+			team_points[Sak] = team_points[Sak] + 1;
+			team_points[Had] = team_points[Had] + 1;
+		}
+
+	if (recursion_arr[3] == 1)
+		team_points[Had] += 3; // hadera
+	else if (recursion_arr[3] == 0)
+		team_points[Had] = team_points[Had] + 1;
+
+
+	if (recursion_arr[4] == 2)
+		team_points[Sak] = team_points[Sak] + 3;
+	else if (recursion_arr[4] == 0)
+		team_points[Sak] = team_points[Sak] + 1;
+
+	if (recursion_arr[5] == 2)
+		team_points[Hap] = team_points[Hap] + 3;
+	else if (recursion_arr[5] == 0)
+		team_points[Hap] = team_points[Hap] + 1;
+
+	if (recursion_arr[6] == 1)
+		team_points[KS] = team_points[KS] + 3;
+	else if (recursion_arr[7] == 0)
+		team_points[KS] = team_points[KS] + 1;
+
+
+
+	for (int i = 0; i < TEAMS; i++) {
+		teams[i].points = team_points[i];
 	}
-	printTeams(teams_arr, games_arr);
+	printTeams(teams, TEAMS, recursion_arr, GAMES);
+	for (int i = 0; i < TEAMS; i++) {
+		teams[i].points = 0;
+	}
 }
 
-void printTeams(Team** teams_arr, Game** games_arr) {
-	Team** res;
-	res = sortTeamsByPoints(teams_arr);
+void printTeams(Team* teams, int size, int* recursion_arr, int size2) {
+	Team* res;
+	res = sortTeamsByPoints(teams, size);
 	total_opt_++;
-
 	if (isInPlayoff(res, Hap)) {
 		cnt_opt_++;
-		printData(res, games_arr);
+		printData(res, recursion_arr);
 	}
-
 	free(res);
 	res = NULL;
 
 }
 
-Team* cpyTeam(Team* t) {
-	Team* cpy = (Team*)calloc(1, sizeof(Team));
-	cpy->id = t->id;
-	cpy->points = t->points;
+Team cpyTeam(Team* t) {
+	Team cpy;
+	cpy.id = t->id;
+	cpy.points = t->points;
 	return cpy;
 }
 
-Team** sortTeamsByPoints(Team** teams_arr) {
-	Team** res = (Team**)calloc(TEAMS, sizeof(Team*));
-	Team* tmp;
+Team* sortTeamsByPoints(Team* teams, int size) {
+	Team* res = (Team*)calloc(TEAMS, sizeof(Team));
+	Team tmp;
 
 	for (int i = 0; i < TEAMS; i++) {
-		res[i] = cpyTeam(teams_arr[i]);
+		res[i] = cpyTeam(&teams[i]);
 	}
-	for (int i = 0; i < TEAMS; i++) {
-		for (int j = 0; j < TEAMS - 1 - i; j++) {
-			if (res[j]->points < res[j + 1]->points) {
+
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size - 1 - i; j++) {
+			if (res[j].points < res[j + 1].points) {
 				tmp = res[j];
 				res[j] = res[j + 1];
 				res[j + 1] = tmp;
@@ -72,67 +128,78 @@ Team** sortTeamsByPoints(Team** teams_arr) {
 	return res;
 }
 
-int isInPlayoff(Team** sorted, int team_id) {
+void printGames(int* recursion_arr) {
+	if (recursion_arr[0] == 1)
+		printf("[%s]-%s, ", teams_name[Nat], teams_name[KS]);
+	else if (recursion_arr[0] == 0)
+		printf("%s-%s: D, ", teams_name[Nat], teams_name[KS]);
+	else
+		printf("%s-[%s], ", teams_name[Nat], teams_name[KS]);
+
+	if (recursion_arr[1] == 1)
+		printf("[%s]-%s, ", teams_name[Hap], teams_name[Nat]);
+	else
+		if (recursion_arr[1] == 2)
+			printf("%s-[%s], ", teams_name[Hap], teams_name[Nat]);
+		else {
+			printf("%s-%s: D, ", teams_name[Nat], teams_name[Hap]);
+		}
+
+	if (recursion_arr[2] == 1)
+		printf("[%s]-%s, ", teams_name[Sak], teams_name[Had]);
+	else
+		if (recursion_arr[2] == 2)
+			printf("%s-[%s], ", teams_name[Sak], teams_name[Had]);
+		else {
+			printf("%s-%s: D, ", teams_name[Sak], teams_name[Had]);
+		}
+
+	if (recursion_arr[3] == 1)
+		printf("[%s]-Maccabi, ", teams_name[Had]);
+	else if (recursion_arr[3] == 0)
+		printf("%s-Maccabi: D, ", teams_name[Had]);
+	else
+		printf("%s-[Maccabi], ", teams_name[Had]);
+
+
+	if (recursion_arr[4] == 2)
+		printf("PT-[%s], ", teams_name[Sak]);
+	else if (recursion_arr[4] == 0)
+		printf("PT-%s: D, ", teams_name[Sak]);
+	else
+		printf("[PT]-%s, ", teams_name[Sak]);
+
+	if (recursion_arr[5] == 2)
+		printf("Jerusalem-[%s], ", teams_name[Hap]);
+	else if (recursion_arr[5] == 0)
+		printf("Jerusalem-%s: D, ", teams_name[Hap]);
+	else
+		printf("[Jerusalem]-%s, ", teams_name[Hap]);
+
+	if (recursion_arr[6] == 1)
+		printf("[%s]-Ashdod, ", teams_name[KS]);
+	else if (recursion_arr[7] == 0)
+		printf("%s-Ashdod: D, ", teams_name[KS]);
+	else
+		printf("%s-[Ashdod], ", teams_name[KS]);
+
+	printf("\n");
+}
+
+int isInPlayoff(Team* sorted, int team_id) {
 	for (int i = 0; i < MAX_TEAM_IN_PLAYOFF; i++) {
-		if (sorted[i]->id == team_id) return 1;
+		if (sorted[i].id == team_id) return 1;
 	}
 	return 0;
 }
 
-void printData(Team** res, Game** games_arr) {
-	printGames(games_arr);
+void printData(Team* res, int* recursion_arr) {
+	printGames(recursion_arr);
 	printf("========== (%d) ==========\n", cnt_opt_);
 	for (int i = 0; i < TEAMS; i++) {
-		if (i == MAX_TEAM_IN_PLAYOFF)
+		if (i == 3)
 			printf("-------------------- \n");
-		printf("%d) %s: %d\n", i + 4, teams_name[res[i]->id], res[i]->points);
+		printf("%d) %s: %d\n", i + 4, teams_name[res[i].id], res[i].points);
 	}
 	printf("======================\n\n");
-}
-
-int isTeamExist(int team_id) {
-	if (team_id >= 0 && team_id < TEAMS) return 1;
-	return 0;
-}
-
-void resetTeamPoints(Team** team_arr) {
-	for (int i = 0; i < TEAMS; i++) {
-		team_arr[i]->points = team_points[i];
-	}
-}
-
-Team* createTeam(int id) {
-	Team* t = (Team*)calloc(1, sizeof(Team));
-	t->id = id;
-	return t;
-}
-
-void makeTeamArr(Team** team_arr) {
-	for (int i = 0; i < TEAMS; i++) {
-		team_arr[i] = createTeam(i);
-	}
-}
-
-void freeTeam(Team* team) {
-	free(team->games);
-	free(team);
-	team = NULL;
-}
-
-void freeTeamArr(Team** team_arr) {
-	for (int i = 0; i < TEAMS; i++) {
-		freeTeam(team_arr[i]);
-	}
-}
-
-void addGameToTeam(Team** team_arr, Game** games) {
-	for (int i = 0; i < TEAMS; i++) {
-		for (int j = 0; j < GAMES; j++) {
-			if (isGameBelongTeam(games[j], team_arr[i]->id)) {
-				team_arr[i]->games = (Game**)realloc(team_arr[i]->games, sizeof(Game*) * (1 + team_arr[i]->num_of_games));
-				team_arr[i]->games[team_arr[i]->num_of_games] = games[j];
-				++team_arr[i]->num_of_games;
-			}
-		}
-	}
 }

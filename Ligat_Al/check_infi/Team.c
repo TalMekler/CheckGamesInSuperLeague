@@ -37,7 +37,7 @@ void printTeams(Team** teams_arr, Game** games_arr) {
 	
 	total_opt_++;
 	
-	if (isInPlayoff(res, HTA)) {
+	if (res[0]->id == HBS) {
 		cnt_opt_++;
 		//printData(res, games_arr);
 	}

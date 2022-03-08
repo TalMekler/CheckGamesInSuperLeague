@@ -3,7 +3,7 @@
 int cnt_opt_ = 0, total_opt_ = 0;
 const char* teams_name[EXTRA_TEAMS] = { "Haifa", "Maccabi TA", "Beer Sheva", "Natania", "Saknin", "Hapoel TA" };
 //Game* games_arr[GAMES] = { 0 };
-int team_points[] = { 59, 55, 50, 39, 42, 40}; // Natania, Hadera, Saknin, Hapoel TA
+int team_points[] = { 59, 55, 50, 39, 42, 40 }; // Natania, Hadera, Saknin, Hapoel TA
 int GAMES = 0;
 // Game Branch
 int main() {
@@ -44,7 +44,7 @@ int main() {
 	Game g28 = { HTA, HBS, 0 };
 	Game g29 = { HTA, Nat, 0 };
 	Game g30 = { HTA, Sak, 0 };
-	Game* games_arr[] = { &g1, &g2, &g3, &g4, &g5, &g6, &g7, &g8, &g9, &g10, &g11, &g12, &g13, &g14, &g15, &g16, &g17, &g18, &g19, &g20, &g21, &g22, &g23, &g24, &g25, &g26, &g27, &g28, &g29, &g30 };
+	Game* games_arr[] = { &g1, &g2, &g3, &g4, &g5, &g6, &g7, &g8, &g9, &g10, &g11, &g12,&g13, &g14, &g15/*, &g16, &g17,&g18, &g19, &g20, &g21, &g22, &g23, &g24, &g25, &g26, &g27, &g28, &g29, &g30 */ };
 	GAMES = sizeof(games_arr) / sizeof(Game*);
 	Team* teams_arr[TEAMS];
 	makeTeamArr(&teams_arr);

@@ -8,14 +8,11 @@ int GAMES = 0;
 // Game Branch
 int main() {
 
-	/*Game g1 = { Nat, KS, 0 };*/
-	Game g2 = { Hap, Nat, 0 };
-	/*Game g3 = { Sak, Had, 0 };*/
-	Game g4 = { Had, MTA, 0 };
-	Game g5 = { PTH, Sak, 0 };
-	/*Game g6 = { HJER, Hap, 0 };*/
-	/*Game g7 = { KS, ASH, 0 };*/
-	Game* games_arr[] = { /*&g1,*/&g2,/*&g3,*/&g4,&g5,/*&g6,&g7*/ };
+	Game g1 = { Hap, Nat, 0 };
+	Game g2 = { Had, MTA, 0 };
+	Game g3 = { PTH, Sak, 0 };
+
+	Game* games_arr[] = { &g1,&g2,&g3 };
 	GAMES = sizeof(games_arr) / sizeof(Game*);
 	Team* teams_arr[TEAMS];
 	makeTeamArr(&teams_arr);

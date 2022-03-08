@@ -1,22 +1,34 @@
 #pragma once
-//Main branch.
+//Game branch.
 
 #ifndef TEAM_DEBUG
 #define TEAM_DEBUG
-#include "Header.h"
+#include "Game.h"
+//#include "Header.h"
 
 typedef struct {
 	int id;
 	int points;
+	Game** games; // DMA
+	int num_of_games;
 } Team;
 
-void printArr(int* arr, int size);
-void func(int* arr, int size, Team* teams);
-void calcPoints(int* recursion_arr, Team* teams, int size);
-void printTeams(Team* teams, int size, int* recursion_arr, int size2);
-Team* sortTeamsByPoints(Team* teams, int size);
-void printGames(int* recursion_arr);
-Team cpyTeam(Team* t);
-int isInPlayoff(Team* sorted, int team_id);
-void printData(Team* res, int* recursion_arr);
+//void printArr(int* arr, int size);
+//
+//int isTeamExist(int team_id);
+
+// uptaded
+void func(Game** games_arr, int size, Team** teams_arr);
+void calcPoints(Team** teams_arr);
+void resetTeamPoints(Team** team_arr);
+Team* createTeam(int id);
+void makeTeamArr(Team** team_arr);
+void freeTeam(Team* team);
+void freeTeamArr(Team** team_arr);
+void addGameToTeam(Team** team_arr, Game** games);
+Team* cpyTeam(Team* t);
+Team** sortTeamsByPoints(Team** teams_arr);
+void printData(Team** res, Game** games_arr);
+void printTeams(Team** teams_arr, Game** games_arr);
+int isInPlayoff(Team** sorted, int team_id);
 #endif

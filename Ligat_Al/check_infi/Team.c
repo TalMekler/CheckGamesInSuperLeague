@@ -39,7 +39,8 @@ void printTeams(Team** teams_arr, Game** games_arr) {
 	
 	if (res[0]->id == HBS) {
 		cnt_opt_++;
-		//printData(res, games_arr);
+		printData(res, games_arr);
+		exit(1);
 	}
 	for (int i = 0; i < TEAMS; i++) {
 		free(res[i]->games);

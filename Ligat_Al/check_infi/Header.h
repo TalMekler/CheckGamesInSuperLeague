@@ -10,6 +10,7 @@
 #define TEAMS 6 // **** Number of the teams you want to check ****
 #define EXTRA_TEAMS 6 // **** If there is no EXTRA TEAM -> value = TEAMS value ****
 #define MAX_TEAM_IN_PLAYOFF 6
+#define GAMES_PER_REOUND 3
 
 // Global Vars
 extern int cnt_opt_, total_opt_;
@@ -21,5 +22,6 @@ extern int team_points[TEAMS];
 extern int GAMES;
 
 void printPercent(float num);
+void addGamesTo_gamesArr(Game** big_arr, Game** small_arr, int games_qtt);
 
 #endif // !TEAM_DEBUG

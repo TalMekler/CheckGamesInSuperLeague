@@ -3,7 +3,7 @@
 int cnt_opt_ = 0, total_opt_ = 0;
 const char* teams_name[EXTRA_TEAMS] = { "Haifa", "Maccabi TA", "Beer Sheva", "Natania", "Saknin", "Hapoel TA" };
 //Game* games_arr[GAMES] = { 0 };
-int team_points[] = { 59, 55, 50, 39, 42, 40 }; // Natania, Hadera, Saknin, Hapoel TA
+int team_points[] = { 59, 53, 55, 40, 42, 38 }; // Haifa, Maccabi TA, Beer Sheva, Natania, Saknin, Hapoel TA
 int GAMES = 0;
 // Game Branch
 int main() {

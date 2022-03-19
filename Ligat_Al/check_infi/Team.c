@@ -37,7 +37,7 @@ void printTeams(Team** teams_arr, Game** games_arr) {
 	
 	total_opt_++;
 	
-	if (res[0]->id == HBS) {
+	if (res[0]->id == MTA) {
 		cnt_opt_++;
 		printData(res, games_arr);
 		exit(1);

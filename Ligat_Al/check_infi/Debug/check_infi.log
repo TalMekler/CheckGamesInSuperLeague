@@ -2,20 +2,20 @@
   Game.c
   Global_Functions.c
   Main.c
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(67,24): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(67,14): warning C4024: 'makeTeamArr': different types for formal and actual parameter 1
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(68,28): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(68,18): warning C4024: 'resetTeamPoints': different types for formal and actual parameter 1
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(69,26): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(69,16): warning C4024: 'addGameToTeam': different types for formal and actual parameter 1
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(69,38): warning C4047: 'function': 'Game **' differs in levels of indirection from 'Game *(*)[30]'
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(69,28): warning C4024: 'addGameToTeam': different types for formal and actual parameter 2
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(70,17): warning C4047: 'function': 'Game **' differs in levels of indirection from 'Game *(*)[30]'
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(70,7): warning C4024: 'func': different types for formal and actual parameter 1
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(70,36): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(70,26): warning C4024: 'func': different types for formal and actual parameter 3
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(71,24): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
-\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(71,14): warning C4024: 'freeTeamArr': different types for formal and actual parameter 1
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(68,24): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(68,14): warning C4024: 'makeTeamArr': different types for formal and actual parameter 1
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(69,28): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(69,18): warning C4024: 'resetTeamPoints': different types for formal and actual parameter 1
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(70,26): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(70,16): warning C4024: 'addGameToTeam': different types for formal and actual parameter 1
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(70,38): warning C4047: 'function': 'Game **' differs in levels of indirection from 'Game *(*)[28]'
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(70,28): warning C4024: 'addGameToTeam': different types for formal and actual parameter 2
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(71,17): warning C4047: 'function': 'Game **' differs in levels of indirection from 'Game *(*)[28]'
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(71,7): warning C4024: 'func': different types for formal and actual parameter 1
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(71,36): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(71,26): warning C4024: 'func': different types for formal and actual parameter 3
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(72,24): warning C4047: 'function': 'Team **' differs in levels of indirection from 'Team *(*)[6]'
+\\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Main.c(72,14): warning C4024: 'freeTeamArr': different types for formal and actual parameter 1
   Team.c
 \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Team.c(14,25): warning C4020: 'calcPoints': too many actual parameters
 \\Mac\Home\Documents\CheckGamesInSuperLeague\Ligat_Al\check_infi\Team.c(24,53): warning C4029: declared formal parameter list different from definition

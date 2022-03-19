@@ -33,3 +33,15 @@ int getPointsToAdd(Game* game, int team_id) {
 	if (game->game_res == 2 && game->guess_id == team_id) return Win;
 	return Lose;
 }
+
+void addRound(Game** games_arr, int* games_arr_size, Game* round_arr, int round_arr_size, int round_num) {
+	printf("Start adding round number %d \n", round_num);
+
+	for (int i = 0; i < round_arr_size; i++) {
+		*games_arr[*games_arr_size] = round_arr[i];
+		++* games_arr_size;
+
+	}
+	
+	printf("Round number %d added! \n", round_num);
+}

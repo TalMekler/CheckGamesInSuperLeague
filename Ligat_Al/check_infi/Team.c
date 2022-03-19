@@ -34,13 +34,17 @@ void calcPoints(Team** teams_arr, Game** games_arr) {
 void printTeams(Team** teams_arr, Game** games_arr) {
 	Team** res;
 	res = sortTeamsByPoints(teams_arr);
-	
+
 	total_opt_++;
-	
-	if (res[0]->id == MTA) {
+
+	if (res[0]->id == MHFC && res[0]->points > res[1]->points) {
 		cnt_opt_++;
 		printData(res, games_arr);
 		exit(1);
+		if (cnt_opt_ > 100) {
+			printf("\nDone!");
+			exit(1);
+		}
 	}
 	for (int i = 0; i < TEAMS; i++) {
 		free(res[i]->games);
@@ -90,7 +94,7 @@ void printData(Team** res, Game** games_arr) {
 	for (int i = 0; i < TEAMS; i++) {
 		if (i == MAX_TEAM_IN_PLAYOFF)
 			printf("-------------------- \n");
-		printf("%d) %s: %d\n", i + 4, teams_name[res[i]->id], res[i]->points);
+		printf("%d) %s: %d\n", i + 1, teams_name[res[i]->id], res[i]->points);
 	}
 	printf("======================\n\n");
 }

@@ -21,5 +21,6 @@ extern int team_points[TEAMS];
 extern int GAMES;
 
 void printPercent(float num);
+void printEnd();
 
 #endif // !TEAM_DEBUG

@@ -71,10 +71,10 @@ int main() {
 	addGameToTeam(&teams_arr, &games_arr);
 	func(&games_arr, GAMES, &teams_arr);
 	freeTeamArr(&teams_arr);
-	printf(">>> Games remined: %d <<<\n", GAMES);
-	printf(">>> There are %d/%d combinations ", cnt_opt_, total_opt_); printPercent(((float)cnt_opt_ / total_opt_) * 100); printf(" <<<\n");
+	
+	printEnd();
 
-	printf("done!\n");
+	printf("Done!\n");
 
 	return 0;
 }

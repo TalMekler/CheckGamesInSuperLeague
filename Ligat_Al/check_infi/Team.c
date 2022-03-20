@@ -33,16 +33,16 @@ void calcPoints(Team** teams_arr, Game** games_arr) {
 
 void printTeams(Team** teams_arr, Game** games_arr) {
 	Team** res;
-	int stop_at = 10000;
+	int stop_at = 5000;
 	res = sortTeamsByPoints(teams_arr);
 
 	total_opt_++;
 
-	if (res[0]->id == MHFC) {
+	if (res[3]->id == HTA && res[3]->points > res[4]->points) {
 		cnt_opt_++;
 		printData(res, games_arr);
 		
-		if (cnt_opt_ >= stop_at) {
+		if (cnt_opt_ >= stop_at && stop_at != 0) {
 			printEnd();
 			printf("\nThe program found %d options.\nDone!", stop_at);
 			exit(1);

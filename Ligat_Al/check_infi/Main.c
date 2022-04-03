@@ -4,11 +4,11 @@ int cnt_opt_ = 0, total_opt_ = 0;
 const char* teams_name[EXTRA_TEAMS] = { "Haifa", "Maccabi TA", "Beer Sheva", "Natania", "Saknin", "Hapoel TA" };
 //Game* games_arr[GAMES] = { 0 };
 int team_points[] = {	62, // Haifa
-						54, // Maccabi Tel Aviv
+						55, // Maccabi Tel Aviv
 						58, // Beer Sheva
-						40, // Natania
+						41, // Natania
 						43, // Saknin
-						38	// Hapoel Tel Aviv
+						41	// Hapoel Tel Aviv
 					};
 int GAMES = 0;
 // Game Branch
@@ -17,13 +17,11 @@ int main() {
 	
 	/* מחזור 2 */
 	Game g2_1 = { MHFC, HBS, 0 };
-	Game g2_2 = { Nat, MTA, 0 };
 	Game g2_3 = { Sak, Nat, 0 };
 
 	/* מחזור 3 */
 	Game g3_1 = { MTA, MHFC, 0 };
 	Game g3_2 = { HBS, HTA, 0 };
-	Game g3_3 = { HTA, Sak, 0 };
 
 	/* מחזור 4 */
 	Game g4_1 = { MHFC, Sak, 0 };
@@ -60,7 +58,7 @@ int main() {
 	Game g10_2 = { HBS, Sak, 0 };
 	Game g10_3 = { HTA, MTA, 0 };
 
-	Game* games_arr[] = { &g2_1, &g2_2, &g2_3, &g3_1, &g3_2, &g3_3, &g4_1, &g4_2, &g4_3
+	Game* games_arr[] = { &g2_1, &g2_3, &g3_1, &g3_2, &g4_1, &g4_2, &g4_3
 						,&g5_1, &g5_2, &g5_3, &g6_1, &g6_2,&g6_3, &g7_1, &g7_2, &g7_3, &g8_1, &g8_2, &g8_3,
 						&g9_1, &g9_2, &g9_3, &g10_1, &g10_2, &g10_3 };
 

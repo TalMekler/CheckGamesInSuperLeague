@@ -10,6 +10,7 @@
 #define TEAMS 6 // **** Number of the teams you want to check ****
 #define EXTRA_TEAMS 6 // **** If there is no EXTRA TEAM -> value = TEAMS value ****
 #define MAX_TEAM_IN_PLAYOFF 6
+#define MAX_GAMES_TO_RUN 15
 
 // Global Vars
 extern int cnt_opt_, total_opt_;
